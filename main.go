@@ -50,6 +50,7 @@ func main() {
 	}
 
 	fmt.Printf("virtual environment \"%s\" is ready at: %s\n", *envName, cwd)
+	fmt.Printf("wrote requirements.txt to \"%s/requirements.txt\"\n", cwd)
 }
 
 func createVirtualEnv(cmdName, envName string) error {
@@ -112,17 +113,36 @@ func installRequirements(pythonCmd, envName string) {
 
 	cmdString := fmt.Sprintf("%s && %s -m pip install -r requirements.txt", activateCmd, pythonCmd)
 	cmd := exec.Command("bash", "-c", cmdString)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	if err := cmd.Run(); err != nil {
-		fmt.Fprintf(os.Stderr, "error installing packages from requirements.txt: %s\n", err)
+
+	done := make(chan bool)
+	go func() {
+		i := 0
+		for {
+			select {
+			case <-done:
+				fmt.Println("\nfinished installing packages from requirements.txt")
+				return
+			default:
+				fmt.Printf("\rinstalling packages from requirements.txt %c", spinner[i%len(spinner)])
+				i++
+				time.Sleep(100 * time.Millisecond)
+			}
+		}
+	}()
+
+	err := cmd.Run()
+	done <- true
+	fmt.Print("\r\033[K")
+
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error installing packages from requirements.txt: %s\n", err)
 		os.Exit(1)
 	}
 }
 
 func generateRequirements(packages string) {
 	/* Generate requirements.txt from the specified packages */
-	packageList := strings.Split(packages, " ")
+	packageList := strings.Split(packages, ", ")
 	err := os.WriteFile("requirements.txt", []byte(strings.Join(packageList, "\n")+"\n"), 0644)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error writing requirements.txt: %s\n", err)
