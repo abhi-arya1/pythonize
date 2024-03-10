@@ -1,6 +1,7 @@
 # Pythonize
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.1-dark_green.svg)](LICENSE)
 
 ## Description
 

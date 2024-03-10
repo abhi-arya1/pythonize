@@ -1,7 +1,7 @@
 npm i
 rm -r venv 
 rm requirements.txt
-go build -o pythonize
+GOARCH=arm64 go build -o ./build/pythonize3
 
 ./scripts/test.sh
 
