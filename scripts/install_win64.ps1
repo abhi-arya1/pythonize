@@ -2,7 +2,7 @@ Write-Host "Installing pythonize to your machine..."
 Write-Host "Run this script as administrator if it doesn't work."
 
 
-$source = ".\pythonize"
+$source = ".\build\pythonize"
 $destination = "$env:ProgramFiles\pythonize"
 
 
