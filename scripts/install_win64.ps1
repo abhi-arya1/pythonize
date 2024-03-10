@@ -2,8 +2,8 @@ Write-Host "Installing pythonize to your machine..."
 Write-Host "Run this script as administrator if it doesn't work."
 
 
-$source = ".\build\pythonize.exe"
-$destination = "$env:ProgramFiles\pythonize.exe"
+$source = ".\build\pythonize"
+$destination = "$env:ProgramFiles\pythonize"
 
 
 If(-Not (Test-Path $destination)){
