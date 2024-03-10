@@ -16,6 +16,9 @@ A Python Quickstart Tool that sets up your `venv`, `requirements.txt`, and `pip`
 
 More Coming Here Soon!
 
+## Installation 
+- For MacOS/Linux users, simply run `./scripts/install_arm64` or `./scripts/install_aarch64` depending on your CPU architecture. Then, you can try it by running `pythonize3` in a new terminal!
+
 ## License
 
 This project is licensed under the [MIT License](LICENSE).
