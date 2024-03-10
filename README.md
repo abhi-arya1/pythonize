@@ -2,29 +2,19 @@
 
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 [![Version](https://img.shields.io/badge/version-0.1-dark_green.svg)](LICENSE)
+[![Build MacOS/Linux](https://img.shields.io/badge/build_mac_&_linux-passing-dark_green.svg)](LICENSE)
+[![Build Arm64](https://img.shields.io/badge/build_windows-on_hold-yellow.svg)](LICENSE)
 
-## Description
+## Demo
+[![Demo](https://img.youtube.com/vi/SzeaXhi4UoE/0.jpg)](https://www.youtube.com/watch?v=SzeaXhi4UoE)
 
-A brief description of your project.
 
-## Table of Contents
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Contributing](#contributing)
-- [License](#license)
+## About
 
-## Installation
+A Python Quickstart Tool that sets up your `venv`, `requirements.txt`, and `pip` packages in one command
 
-Instructions on how to install and set up the project.
-
-## Usage
-
-Examples and instructions on how to use the project.
-
-## Contributing
-
-Guidelines for contributing to the project.
+More Coming Here Soon!
 
 ## License
 
