@@ -2,6 +2,3 @@
 /venv/
 /venv/lib
 /requirements.txt
-
-# executable 
-/pythonize  
