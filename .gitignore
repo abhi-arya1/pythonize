@@ -2,3 +2,4 @@
 /venv/
 /venv/lib
 /requirements.txt
+.DS_Store
